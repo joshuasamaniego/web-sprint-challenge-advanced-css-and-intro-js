@@ -252,10 +252,9 @@ console.log(getArtistByIndex(artists, 0));
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(arr) {
-  let newArray = [Number(arr.years)];
-  console.log(newArray);
+  let newArray = [];
   for (let i = 0; i < arr.length; i++) {
-    if (arr.years === "1900 - 2000") {
+    if (arr === "1900 - 2000") {
       newArray.push(arr.name);
     } else {
       return "not working";
@@ -275,13 +274,9 @@ console.log(get20s(artists));
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.
  */
 function removeArtist(arr, index) {
-  for (i = 0; i < arr.length; i++) {
-    if (arr[i] === index) {
-      arr.splice(i, 1);
-    }
-  } //for loop
+  arr.splice(index, 1);
   return artists;
-} //function
+}
 console.log(removeArtist(artists, 0));
 
 /**
@@ -313,7 +308,7 @@ function addArtist(object) {
 }
 console.log(addArtist(newArtist));
 
-/* Task 7: Create a function called lotsOfArt() that takes one argument: 
+/* ✅ Task 7: Create a function called lotsOfArt() that takes one argument: 
 
     (1) artists array 
 
